@@ -91,15 +91,16 @@ public class ChangeDetailsPanel extends JPanel implements Disposable {
         Icon icon = null;
         String statusStr = "";
         ReviewStatus status = change.getReviewStatus();
+        ClassLoader classLoader = ChangeDetailsPanel.class.getClassLoader();
         switch(status) {
             case ACCEPTED:
-                icon = GuiUtils.getIcon(HistoryUiUtils.REVIEW_ACCEPTED_ICON_FILENAME, 40, 40);
+                icon = GuiUtils.getIcon(classLoader, HistoryUiUtils.REVIEW_ACCEPTED_ICON_FILENAME, 40, 40);
                 statusStr = "Accepted"; break;
             case REJECTED:
-                icon = GuiUtils.getIcon(HistoryUiUtils.REVIEW_REJECTED_ICON_FILENAME, 40, 40);
+                icon = GuiUtils.getIcon(classLoader, HistoryUiUtils.REVIEW_REJECTED_ICON_FILENAME, 40, 40);
                 statusStr = "Rejected"; break;
             case PENDING:
-                icon = GuiUtils.getIcon(HistoryUiUtils.REVIEW_PENDING_ICON_FILENAME, 40, 40);
+                icon = GuiUtils.getIcon(classLoader, HistoryUiUtils.REVIEW_PENDING_ICON_FILENAME, 40, 40);
                 statusStr = "Pending Review"; break;
         }
         if(icon != null) {

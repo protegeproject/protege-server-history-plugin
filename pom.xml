@@ -54,6 +54,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <protege-client.version>3.0.0-SNAPSHOT</protege-client.version>
+        <fasterxml-uuid.version>3.1.5</fasterxml-uuid.version>
     </properties>
 
     <dependencies>
@@ -61,6 +62,11 @@
             <groupId>edu.stanford.protege</groupId>
             <artifactId>protege-client</artifactId>
             <version>${protege-client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+            <version>${fasterxml-uuid.version}</version>
         </dependency>
     </dependencies>
 
@@ -87,7 +93,8 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Bundle-ClassPath>.</Bundle-ClassPath>
                         <Export-Package>
-                            edu.stanford.protege.server.history.*
+                            edu.stanford.protege.server.history.*,
+                            com.fasterxml.uuid.*
                         </Export-Package>
                         <Include-Resource>{maven-resources}</Include-Resource>
                     </instructions>

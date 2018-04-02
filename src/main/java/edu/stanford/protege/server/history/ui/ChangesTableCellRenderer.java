@@ -87,7 +87,7 @@ public class ChangesTableCellRenderer extends LogDiffCellRenderer {
 
     private JLabel getIconLabel(JTable table, ChangeType type, ChangeMode mode, String iconFilename, boolean
         isSelected, boolean committed) {
-        Icon icon = GuiUtils.getIcon(iconFilename, 25, 25);
+        Icon icon = GuiUtils.getIcon(ChangeDetailsPanel.class.getClassLoader(), iconFilename, 25, 25);
         // rpc
 //        if(!committed) {
 //            ImageIcon base = (ImageIcon)GuiUtils.getIcon(iconFilename, 30, 30);
